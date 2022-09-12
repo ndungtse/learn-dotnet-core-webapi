@@ -14,12 +14,12 @@ namespace Crud_Mongodb.Services
 
         public List<Student> Get()
         {
-
+            throw new NotImplementedException();
         }
 
-        public Student Get()
+        public Student Get(string Id)
         {
-
+            throw new NotImplementedException();
         }
 
         public void Remove()

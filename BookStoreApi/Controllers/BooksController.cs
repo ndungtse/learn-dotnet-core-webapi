@@ -69,4 +69,18 @@ public class BooksController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPatch("{id:length(24)}")]
+    public async Task<IActionResult> Patch(string id, Book updatedBook)
+    {
+        var book =await _booksService.GetAsync(id);
+
+        if(book is null)
+        {
+            return NotFound();
+        }
+
+        await _booksService.UpdateAsync(id, updatedBook);
+        return NoContent();
+    }
 }
